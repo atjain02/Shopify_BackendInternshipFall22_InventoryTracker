@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+   <%- include('./partials/head.ejs') %>
+   <body>
+        <%- include('./partials/nav.ejs') %>
+        <div class="items content">
+            <% if (items.length > 0) { %>
+                <% items.forEach(item => { %>
+                  <a class="single" href="/items/<%= item._id %>">
+                    <h3 class="name"><%= item.name %></h3>
+                    <p class="quantity">Qty: <%= item.quantity %></p>
+                    <p class="warehouse">Stored at <%= item.warehouse %> </p>
+                  </a>
+                <% }) %>
+              <% } else { %>
+                <p>Your inventory is empty!</p>
+              <% } %>
+        </div>
+   </body>
+</html>

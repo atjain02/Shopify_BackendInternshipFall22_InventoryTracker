@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <%- include('./partials/head.ejs') %>
+    <body>
+        <%- include('./partials/nav.ejs') %>
+        <div class="details content">
+            <h2><%= item.name %></h2>
+            <div class="content">
+                <p class="quantity">Qty: <%= item.quantity %></p>
+                <p class="detalis"> <%= item.details %> </p>
+                <p class="warehouse">Stored at <%= item.warehouse %> </p>
+            </div>
+            <a class="change edit" id="<%= item.id %>">Edit</a>
+            <a class="change delete" id="<%= item._id %>">
+              Delete
+              <!--
+              <img src="/trashcan.svg" alt="delete icon">
+              -->
+            </a>
+        </div>
+
+        <script>
+          const del = document.querySelector('.delete');
+          del.addEventListener('click', (e) => {
+            const endpoint = `/items/${del.id}`;
+            fetch(endpoint, {
+              method: 'DELETE',
+            })
+            .then(response => window.location.href = '/items')
+            .catch(err => console.log(err));
+          });
+
+          const edit = document.querySelector('.edit');
+          edit.addEventListener('click', (e) => {
+            window.location.href = `/edit/${del.id}`;
+          })
+        </script>
+    </body>
+</html>
