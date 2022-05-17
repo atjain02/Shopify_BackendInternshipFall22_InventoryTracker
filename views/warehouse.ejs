@@ -19,12 +19,11 @@
                   <p>This warehouse is empty!</p>
                 <% } %>
             </div>
-            <a class="change edit" id="<%= warehouse.id %>">Edit</a>
+            <a class="change edit" id="<%= warehouse.id %>">
+              <img src="/editSym.svg" alt="edit icon">
+            </a>
             <a class="change delete" id="<%= warehouse._id %>">
-              Delete
-              <!--
-              <img src="/trashcan.svg" alt="delete icon">
-              -->
+              <img src="/deleteSym.svg" alt="delete icon">
             </a>
         </div>
 

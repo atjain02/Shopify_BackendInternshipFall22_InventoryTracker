@@ -60,10 +60,10 @@ h3{
     display: block;
     margin: 40px 0;
     padding-left: 30px;
-    border-left: 6px solid crimson;
+    border-left: 6px solid green;
 }
 .items a:hover h3{
-    color: crimson;
+    color: green;
 }
 
 /* details styles */
@@ -110,7 +110,7 @@ textarea{
 }
 .create-item button{
     margin-top: 20px;
-    background: crimson;
+    background: green;
     color: white;
     padding: 6px;
     border: 0;

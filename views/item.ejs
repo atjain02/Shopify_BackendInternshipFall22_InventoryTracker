@@ -10,12 +10,11 @@
                 <p class="detalis"> <%= item.details %> </p>
                 <p class="warehouse">Stored at <%= item.warehouse %> </p>
             </div>
-            <a class="change edit" id="<%= item.id %>">Edit</a>
+            <a class="change edit" id="<%= item.id %>">
+              <img src="/editSym.svg" alt="edit icon">
+            </a>
             <a class="change delete" id="<%= item._id %>">
-              Delete
-              <!--
-              <img src="/trashcan.svg" alt="delete icon">
-              -->
+              <img src="/deleteSym.svg" alt="delete icon">
             </a>
         </div>
 
