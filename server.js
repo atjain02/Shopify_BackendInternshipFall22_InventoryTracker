@@ -10,7 +10,9 @@ const PORT = process.env.PORT || 3000;
 const db = 'mongodb+srv://app:DXW50qcaRDL7A40f@shopifyinventorytracker.ykevh.mongodb.net/InventoryTracker?retryWrites=true&w=majority';
 mongoose.connect(db)
     .then((result) => app.listen(PORT))
-    .catch((err) => console.log(err));
+    .catch((err) => {
+        throw new Error("Cannot connect to database");
+    });
 
 //ejs
 app.set('view engine', 'ejs');
@@ -22,7 +24,7 @@ app.use(express.json());
 
 //routes
 app.get('/', (req, res) => {
-    res.redirect('/items');
+    res.render('welcome', { title : "Home" });
 });
 
 app.use(itemRoutes);
@@ -34,6 +36,5 @@ app.use((req, res) => {
 })
 
 app.use((err, req, res, next) => {
-    console.log(err);
     res.status(500).render('error', { title : '500', error :  '500, internal server error!'});
 })

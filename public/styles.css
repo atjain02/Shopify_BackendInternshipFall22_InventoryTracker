@@ -55,7 +55,7 @@ h3{
     margin-left: 20px;
 }
 
-/* index styles */
+/* inventory styles */
 .items a{
     display: block;
     margin: 40px 0;
@@ -64,6 +64,24 @@ h3{
 }
 .items a:hover h3{
     color: green;
+}
+
+/* warehouse details styles */
+.nameInWarehouse:hover{
+    color: green;
+    cursor: pointer;
+}
+
+.nameInWarehouse {
+    font-weight: bold;
+}
+
+.warehouseInventory {
+    margin-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
 }
 
 /* details styles */
@@ -87,6 +105,11 @@ h3{
 .change:hover{
     cursor: pointer;
     box-shadow: 1px 2px 3px rgba(0,0,0,0.2);
+}
+.info{
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 /* create styles */

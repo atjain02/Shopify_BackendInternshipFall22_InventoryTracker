@@ -13,7 +13,7 @@
               <textarea id="details" name="details"></textarea>
               <label for="warehouse">Warehouse:</label>
               <select class="dropdown" id="warehouse" name="warehouse" required>
-                <option value="N/A">Not at warehouse</option>
+                <option value="N/A">Not at a warehouse</option>
                 <% if (warehouses.length > 0) { %>
                     <% warehouses.forEach(warehouse => { %>
                       <option value="<%= warehouse.name %>"><%= warehouse.name %></option>
@@ -23,5 +23,6 @@
               <button>Submit</button>
             </form>
         </div>
+        <%- include('./partials/footer.ejs') %>
    </body>
 </html>

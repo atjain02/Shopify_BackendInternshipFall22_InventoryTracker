@@ -6,8 +6,8 @@
         <div class="details content">
             <h2><%= item.name %></h2>
             <div class="content">
-                <p class="quantity">Qty: <%= item.quantity %></p>
-                <p class="detalis"> <%= item.details %> </p>
+                <p class="quantity">Quantity: <%= item.quantity %></p>
+                <p class="info"> <%= item.details %> </p>
                 <p class="warehouse">Stored at <%= item.warehouse %> </p>
             </div>
             <a class="change edit" id="<%= item.id %>">
@@ -34,5 +34,6 @@
             window.location.href = `/edit/${del.id}`;
           })
         </script>
+    <%- include('./partials/footer.ejs') %>
     </body>
 </html>

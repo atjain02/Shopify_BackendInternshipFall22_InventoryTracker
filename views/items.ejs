@@ -8,7 +8,7 @@
                 <% items.forEach(item => { %>
                   <a class="single" href="/items/<%= item._id %>">
                     <h3 class="name"><%= item.name %></h3>
-                    <p class="quantity">Qty: <%= item.quantity %></p>
+                    <p class="quantity">Quantity: <%= item.quantity %></p>
                     <p class="warehouse">Stored at <%= item.warehouse %> </p>
                   </a>
                 <% }) %>
@@ -16,5 +16,6 @@
                 <p>Your inventory is empty!</p>
               <% } %>
         </div>
+        <%- include('./partials/footer.ejs') %>
    </body>
 </html>

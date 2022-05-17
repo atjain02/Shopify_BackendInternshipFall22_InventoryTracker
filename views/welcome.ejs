@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+   <%- include('./partials/head.ejs') %>
+   <body>
+        <%- include('./partials/nav.ejs') %>
+        <div class="details content">
+            <h2>Welcome!</h2>
+            This is the inventory tracking web application that I have built for the Fall 2022 Shopify Backend Developer Intern Challenge.
+            <br><br>
+            I used NodeJS, Express, MongoDB, Mongoose, and EJS views.
+            <br><br>
+            I used these frameworks and MongoDB in particular to allow for efficient horizontal scaling in the future.
+            For the purposes of saving time, since custom and reactive UI was not necessary, I did not use ReactJS or a CSS framework, but if needed that could have been implemented for a better quality front-end design.
+            <br><br>
+            I added the extra functionality of being able to create warehouses and assign items to warehouses.
+            <br><br>
+            <h3>Functionality</h3>
+            Click on the "Inventory" tab to view all items that are in inventory.
+            You can click on any one of these items to view more information about the item and edit or delete the item.
+            <br><br>
+            Click on the "Warehouses" tab to view all the warehouses that have been created. You can click on any one of these warehouses to view more information about that warehouse and edit or delete the warehouse.
+            (Note: If you delete a warehouse that has items assigned to it, the locations for all the items stored there will automatically be changed to 'N/A').
+            When you click on a particular warehouse, it gives you a list of all the items assigned to it.
+            <br><br>
+            Click on the "New Warehouse" tab to create a new warehouse. <br>
+            Click on the "New Item" tab to create a new item. You have the option to assign the item to a warehouse.
+        </div>
+        <%- include('./partials/footer.ejs') %>
+   </body>
+</html>

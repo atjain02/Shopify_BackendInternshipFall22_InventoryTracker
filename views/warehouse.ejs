@@ -7,14 +7,17 @@
             <h2><%= warehouse.name %></h2>
             <div class="content">
                 <p class="location">Location: <%= warehouse.location %></p>
-                <p class="detalis"> <%= warehouse.details %> </p>
+                <p class="info"> <%= warehouse.details %> </p>
                 <% if (items.length > 0) { %>
-                  <% items.forEach(item => { %>
-                    <a class="single" href="/items/<%= item._id %>">
-                      <h3 class="name"><%= item.name %></h3>
-                      <p class="quantity">Qty: <%= item.quantity %></p>
-                    </a>
-                  <% }) %>
+                  <h3>Inventory at this location:</h3>
+                  <ul class="warehouseInventory">
+                    <% items.forEach(item => { %>
+                      <li>
+                        <p class="nameInWarehouse" onclick="location.href='/items/<%= item._id %>';"><%= item.name %></p>
+                        <p class="qtyInWarehouse">Quantity: <%= item.quantity %></p>
+                      </li>
+                    <% }) %>
+                  </ul>
                 <% } else { %>
                   <p>This warehouse is empty!</p>
                 <% } %>
@@ -43,5 +46,6 @@
             window.location.href = `/editWarehouse/${del.id}`;
           })
         </script>
+                <%- include('./partials/footer.ejs') %>
     </body>
 </html>
