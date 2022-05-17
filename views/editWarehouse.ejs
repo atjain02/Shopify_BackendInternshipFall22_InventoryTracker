@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+   <%- include('./partials/head.ejs') %>
+   <body>
+        <%- include('./partials/nav.ejs') %>
+        <div class="create-item content">
+          <h2><%= warehouse.name %></h2>
+            <form action="<%=`/editWarehouse/${warehouse.id}`%>" method="POST">
+              <label for="location">Warehouse location:</label>
+              <input type="text" id="location" name="location" value="<%= warehouse.location %>" required>
+              <label for="details">Warehouse details:</label>
+              <textarea id="details" name="details"><%= warehouse.details %></textarea>
+              <button>Submit</button>
+            </form>
+        </div>
+   </body>
+</html>

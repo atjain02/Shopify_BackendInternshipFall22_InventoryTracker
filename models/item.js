@@ -11,7 +11,6 @@ const itemSchema = new mongoose.Schema({
     },
     details: {
         type: String,
-        required: true,
     },
     warehouse: {
         type: String,

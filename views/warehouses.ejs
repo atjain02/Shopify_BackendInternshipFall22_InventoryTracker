@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+   <%- include('./partials/head.ejs') %>
+   <body>
+        <%- include('./partials/nav.ejs') %>
+        <div class="items content">
+            <% if (warehouses.length > 0) { %>
+                <% warehouses.forEach(warehouse => { %>
+                  <a class="single" href="/warehouses/<%= warehouse._id %>">
+                    <h3 class="name"><%= warehouse.name %></h3>
+                    <p class="quantity">Location: <%= warehouse.location %></p>
+                  </a>
+                <% }) %>
+              <% } else { %>
+                <p>You have no warehouses added!</p>
+              <% } %>
+        </div>
+   </body>
+</html>

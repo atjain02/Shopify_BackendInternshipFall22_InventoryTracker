@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <%- include('./partials/head.ejs') %>
+    <body>
+        <%- include('./partials/nav.ejs') %>
+        <div class="details content">
+            <h2><%= warehouse.name %></h2>
+            <div class="content">
+                <p class="location">Location: <%= warehouse.location %></p>
+                <p class="detalis"> <%= warehouse.details %> </p>
+                <% if (items.length > 0) { %>
+                  <% items.forEach(item => { %>
+                    <a class="single" href="/items/<%= item._id %>">
+                      <h3 class="name"><%= item.name %></h3>
+                      <p class="quantity">Qty: <%= item.quantity %></p>
+                    </a>
+                  <% }) %>
+                <% } else { %>
+                  <p>This warehouse is empty!</p>
+                <% } %>
+            </div>
+            <a class="change edit" id="<%= warehouse.id %>">Edit</a>
+            <a class="change delete" id="<%= warehouse._id %>">
+              Delete
+              <!--
+              <img src="/trashcan.svg" alt="delete icon">
+              -->
+            </a>
+        </div>
+
+        <script>
+          const del = document.querySelector('.delete');
+          del.addEventListener('click', (e) => {
+            const endpoint = `/warehouses/${del.id}`;
+            fetch(endpoint, {
+              method: 'DELETE',
+            })
+            .then(response => window.location.href = '/warehouses')
+            .catch(err => console.log(err));
+          });
+
+          const edit = document.querySelector('.edit');
+          edit.addEventListener('click', (e) => {
+            window.location.href = `/editWarehouse/${del.id}`;
+          })
+        </script>
+    </body>
+</html>

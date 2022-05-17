@@ -12,7 +12,14 @@
               <label for="details">Item details:</label>
               <textarea id="details" name="details"><%= item.details %></textarea>
               <label for="warehouse">Warehouse:</label>
-              <input id="warehouse" name="warehouse" value="<%= item.warehouse %>" required></input>
+              <select class="dropdown" id="warehouse" name="warehouse" required>
+                <option value="N/A">Not at warehouse</option>
+                <% if (warehouses.length > 0) { %>
+                    <% warehouses.forEach(warehouse => { %>
+                      <option value="<%= warehouse.name %>"><%= warehouse.name %></option>
+                    <% }) %>
+                  <% } %>
+              </select>
               <button>Submit</button>
             </form>
         </div>
